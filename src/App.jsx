@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <div className="container">
         <Header />
-        <main>
+        <main className="full-width">
           <Routes>
             <Route path="/" element={<ShowCreators />} />
             <Route path="/view/:id" element={<ViewCreator />} />

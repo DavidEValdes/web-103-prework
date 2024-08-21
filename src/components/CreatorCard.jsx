@@ -8,7 +8,9 @@ const CreatorCard = ({ creator }) => {
       {creator.imageURL && <img src={creator.imageURL} alt={creator.name} />}
       <p>{creator.description}</p>
       <div className="button-group">
-        <a href={creator.url} target="_blank" rel="noopener noreferrer" className="outline">Visit Channel</a>
+        <a href={creator.url} target="_blank" rel="noopener noreferrer" className="visit-channel-btn">
+          Visit Channel
+        </a>
         <Link to={`/view/${creator.id}`} role="button" className="outline">View Details</Link>
         <Link to={`/edit/${creator.id}`} role="button" className="outline secondary">Edit</Link>
       </div>

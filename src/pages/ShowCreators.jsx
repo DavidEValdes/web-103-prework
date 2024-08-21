@@ -18,9 +18,7 @@ const ShowCreators = () => {
       const { data, error } = await supabase
         .from('creators')
         .select('*');
-      
       if (error) throw error;
-      
       setCreators(data);
     } catch (error) {
       setError('Failed to fetch creators');
@@ -34,9 +32,9 @@ const ShowCreators = () => {
   if (error) return <div role="alert">Error: {error}</div>;
 
   return (
-    <div>
-      <h1>Creatorverse</h1>
-      <Link to="/add" role="button">Add New Creator</Link>
+    <div className="show-creators-container">
+      <h1> Browse All Creators</h1>
+      <Link to="/add" role="button" className="add-creator-btn">Add New Creator</Link>
       {creators.length === 0 ? (
         <p>No creators found. Add some!</p>
       ) : (
