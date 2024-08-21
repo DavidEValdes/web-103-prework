@@ -1,29 +1,24 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useRoutes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import ShowCreators from './pages/ShowCreators';
 import ViewCreator from './pages/ViewCreator';
 import EditCreator from './pages/EditCreator';
 import AddCreator from './pages/AddCreator';
-
-// Define routes using useRoutes
-const AppRoutes = () => {
-  let routes = useRoutes([
-    { path: "/", element: <ShowCreators /> },
-    { path: "/view/:id", element: <ViewCreator /> },
-    { path: "/edit/:id", element: <EditCreator /> },
-    { path: "/add", element: <AddCreator /> },
-  ]);
-  return routes;
-};
+import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="container">
         <Header />
         <main>
-          <AppRoutes />
+          <Routes>
+            <Route path="/" element={<ShowCreators />} />
+            <Route path="/view/:id" element={<ViewCreator />} />
+            <Route path="/edit/:id" element={<EditCreator />} />
+            <Route path="/add" element={<AddCreator />} />
+          </Routes>
         </main>
       </div>
     </BrowserRouter>

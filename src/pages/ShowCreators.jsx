@@ -5,30 +5,46 @@ import CreatorCard from '../components/CreatorCard';
 
 const ShowCreators = () => {
   const [creators, setCreators] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchCreators();
   }, []);
 
   async function fetchCreators() {
-    const { data, error } = await supabase
-      .from('creators')
-      .select('*');
-    
-    if (error) console.log('Error fetching creators:', error);
-    else setCreators(data);
+    try {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('creators')
+        .select('*');
+      
+      if (error) throw error;
+      
+      setCreators(data);
+    } catch (error) {
+      setError('Failed to fetch creators');
+      console.error('Error:', error);
+    } finally {
+      setLoading(false);
+    }
   }
+
+  if (loading) return <div aria-busy="true">Loading creators...</div>;
+  if (error) return <div role="alert">Error: {error}</div>;
 
   return (
     <div>
       <h1>Creatorverse</h1>
-      <Link to="/add">Add New Creator</Link>
+      <Link to="/add" role="button">Add New Creator</Link>
       {creators.length === 0 ? (
         <p>No creators found. Add some!</p>
       ) : (
-        creators.map(creator => (
-          <CreatorCard key={creator.id} creator={creator} />
-        ))
+        <div className="creator-grid">
+          {creators.map(creator => (
+            <CreatorCard key={creator.id} creator={creator} />
+          ))}
+        </div>
       )}
     </div>
   );
