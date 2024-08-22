@@ -1,10 +1,10 @@
-# WEB103 Prework - *👉🏿 Creatorverse*
+# WEB103 Prework - *Creatorverse*
 
-Submitted by: **👉🏿 David Valdes**
+Submitted by: **David Valdes**
 
-About this web app: **👉🏿 Browse and search through my favorite creators!**
+About this web app: **Browse and search through my favorite creators!**
 
-Time spent: **👉🏿 10** hours
+Time spent: **10** hours
 
 ## Required Features
 
@@ -31,11 +31,9 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![Screen Recording 2024-08-21 at 10 46 41 PM](https://github.com/user-attachments/assets/e6711a68-9085-43d0-a0d6-726d01ab2b2c)
 
-## Notes
 
-Describe any challenges encountered while building the app or any additional context you'd like to add.
 
 ## License
 
