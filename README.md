@@ -2,7 +2,7 @@
 
 Submitted by: **David Valdes**
 
-About this web app: **Browse and search through creators!**
+About this web app: **Add,browse and search through creators!**
 
 Time spent: **5** hours
 
