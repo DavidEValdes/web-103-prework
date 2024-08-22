@@ -4,7 +4,7 @@ Submitted by: **David Valdes**
 
 About this web app: **Browse and search through my favorite creators!**
 
-Time spent: **10** hours
+Time spent: **5** hours
 
 ## Required Features
 
