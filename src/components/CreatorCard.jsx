@@ -6,7 +6,7 @@ const CreatorCard = ({ creator }) => {
     <article className="creator-card">
       <h2>{creator.name}</h2>
       {creator.imageURL && <img src={creator.imageURL} alt={creator.name} />}
-      <p>{creator.description}</p>
+      <p className = "card-description">{creator.description}</p>
       <div className="button-group">
         <a href={creator.url} target="_blank" rel="noopener noreferrer" className="visit-channel-btn">
           Visit Channel

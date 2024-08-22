@@ -16,21 +16,22 @@ const ViewCreator = () => {
       .select('*')
       .eq('id', id)
       .single();
-    
     if (error) console.log('Error fetching creator:', error);
     else setCreator(data);
   }
 
-  if (!creator) return <div>Loading...</div>;
+  if (!creator) return <div className="loading">Loading...</div>;
 
   return (
-    <div>
-      <h1>{creator.name}</h1>
-      <a href={creator.url} target="_blank" rel="noopener noreferrer">Visit Channel</a>
-      <p>{creator.description}</p>
-      {creator.imageURL && <img src={creator.imageURL} alt={creator.name} />}
-      <Link to={`/edit/${creator.id}`}>Edit</Link>
-      <Link to="/">Back to All Creators</Link>
+    <div className="view-creator-container">
+      <h1 className="creator-name">{creator.name}</h1>
+      {creator.imageURL && <img src={creator.imageURL} alt={creator.name} className="creator-image" />}
+      <p className="creator-description">{creator.description}</p>
+      <div className="button-group">
+        <a href={creator.url} target="_blank" rel="noopener noreferrer" className="visit-channel-btn">Visit Channel</a>
+        <Link to={`/edit/${creator.id}`} className="edit-btn">Edit</Link>
+        <Link to="/" className="back-btn">Back to All Creators</Link>
+      </div>
     </div>
   );
 };
